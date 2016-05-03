@@ -1,0 +1,193 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.gz</groupId>
+  <artifactId>demo</artifactId>
+  <packaging>pom</packaging>
+  <version>1.0-SNAPSHOT</version>
+  <modules>
+    <module>../demo-common</module>
+    <module>../demo-manager</module>
+    <module>../demo-service</module>
+    <module>../demo-domain</module>
+    <module>../demo-dao</module>
+    <module>../demo-web</module>
+  </modules>
+  <name>home</name>
+  <url>http://maven.apache.org</url>
+
+  <properties>
+    <marjor-version>1</marjor-version>
+    <minjor-version>0</minjor-version>
+    <snapshot-version>-SNAPSHOT</snapshot-version>
+    <full-version>${marjor-version}.${minjor-version}${snapshot-version}</full-version>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <spring.version>3.1.0.RELEASE</spring.version>
+  </properties>
+
+
+  <profiles>
+    <profile>
+      <id>local</id>
+      <properties>
+        <env>local</env>
+        <!--系统域名 -->
+        <trade.domain.name>trade.jr.jd.com</trade.domain.name>
+        <!-- LOG日志 -->
+        <trade.log.level>INFO</trade.log.level>
+        <trade.log.path>/export/Logs/${trade.domain.name}</trade.log.path>
+        <!-- 京东登录 -->
+        <login.jd.applicationId>rpweb</login.jd.applicationId>
+        <login.jd.passport.checkLogin.cookieName>thor</login.jd.passport.checkLogin.cookieName>
+        <login.jd.passport.checkLogin.authenticationKey>8B6697227CBCA902B1A0925D40FAA00B353F2DF4359D2099</login.jd.passport.checkLogin.authenticationKey>
+        <login.jd.passport.checkLogin.loginUrl>http://passport.jd.com/uc/login</login.jd.passport.checkLogin.loginUrl>
+        <login.jd.passport.checkLogin.charsetName>GBK</login.jd.passport.checkLogin.charsetName>
+        <login.jd.passport.checkLogin.uriEncoding>GBK</login.jd.passport.checkLogin.uriEncoding>
+        <!--预发布后缀-->
+        <profile.preview.fix.tail></profile.preview.fix.tail>
+      </properties>
+    </profile>
+    <profile>
+      <id>dev</id>
+      <properties>
+        <env>dev</env>
+        <!--系统域名 -->
+        <trade.domain.name>trade.jr.jd.com</trade.domain.name>
+        <!-- LOG日志 -->
+        <trade.log.level>INFO</trade.log.level>
+        <trade.log.path>/export/Logs/${trade.domain.name}</trade.log.path>
+        <!-- 京东登录 -->
+        <login.jd.applicationId>rpweb</login.jd.applicationId>
+        <login.jd.passport.checkLogin.cookieName>thor</login.jd.passport.checkLogin.cookieName>
+        <login.jd.passport.checkLogin.authenticationKey>8B6697227CBCA902B1A0925D40FAA00B353F2DF4359D2099</login.jd.passport.checkLogin.authenticationKey>
+        <login.jd.passport.checkLogin.loginUrl>http://passport.jd.com/uc/login</login.jd.passport.checkLogin.loginUrl>
+        <login.jd.passport.checkLogin.charsetName>GBK</login.jd.passport.checkLogin.charsetName>
+        <login.jd.passport.checkLogin.uriEncoding>GBK</login.jd.passport.checkLogin.uriEncoding>
+        <!--预发布后缀-->
+        <profile.preview.fix.tail></profile.preview.fix.tail>
+
+        <home.version>1.0.0</home.version>
+      </properties>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+      </activation>
+    </profile>
+    <profile>
+      <id>preview</id>
+      <properties>
+        <env>preview</env>
+        <!--系统域名 -->
+        <trade.domain.name>trade.jr.jd.com</trade.domain.name>
+        <!-- LOG日志 -->
+        <trade.log.level>INFO</trade.log.level>
+        <trade.log.path>/export/Logs/${trade.domain.name}</trade.log.path>
+
+        <!-- 京东登录 -->
+        <login.jd.applicationId>rpweb</login.jd.applicationId>
+        <login.jd.passport.checkLogin.cookieName>lighting</login.jd.passport.checkLogin.cookieName>
+        <login.jd.passport.checkLogin.authenticationKey>ADA0A82280F24BA804DC1613B4E3914D46B2A069A04D8964</login.jd.passport.checkLogin.authenticationKey>
+        <login.jd.passport.checkLogin.loginUrl>http://passport.jd.com/uc/login</login.jd.passport.checkLogin.loginUrl>
+        <login.jd.passport.checkLogin.charsetName>GBK</login.jd.passport.checkLogin.charsetName>
+        <login.jd.passport.checkLogin.uriEncoding>GBK</login.jd.passport.checkLogin.uriEncoding>
+        <!--预发布后缀-->
+        <profile.preview.fix.tail>-preview</profile.preview.fix.tail>
+
+      </properties>
+    </profile>
+    <profile>
+      <id>production</id>
+      <properties>
+        <env>production</env>
+        <!--系统域名 -->
+        <trade.domain.name>trade.jr.jd.com</trade.domain.name>
+        <!-- LOG日志 -->
+        <trade.log.level>INFO</trade.log.level>
+        <trade.log.path>/export/Logs/${trade.domain.name}</trade.log.path>
+        <!-- 京东登录 -->
+        <login.jd.applicationId>rpweb</login.jd.applicationId>
+        <login.jd.passport.checkLogin.cookieName>lighting</login.jd.passport.checkLogin.cookieName>
+        <login.jd.passport.checkLogin.authenticationKey>ADA0A82280F24BA804DC1613B4E3914D46B2A069A04D8964</login.jd.passport.checkLogin.authenticationKey>
+        <login.jd.passport.checkLogin.loginUrl>http://passport.jd.com/uc/login</login.jd.passport.checkLogin.loginUrl>
+        <login.jd.passport.checkLogin.charsetName>GBK</login.jd.passport.checkLogin.charsetName>
+        <login.jd.passport.checkLogin.uriEncoding>GBK</login.jd.passport.checkLogin.uriEncoding>
+        <!--预发布后缀-->
+        <profile.preview.fix.tail></profile.preview.fix.tail>
+      </properties>
+    </profile>
+  </profiles>
+
+
+  <dependencies>
+
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.12</version>
+      <scope>test</scope>
+    </dependency>
+
+<!--    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-beans</artifactId>
+      <version>1.2.6</version>
+    </dependency>-->
+
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-core</artifactId>
+      <version>4.1.6.RELEASE</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-test</artifactId>
+      <version>4.2.0.RELEASE</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.mybatis</groupId>
+      <artifactId>mybatis-spring</artifactId>
+      <version>1.2.2</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-context</artifactId>
+      <version>4.2.5.RELEASE</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-webmvc</artifactId>
+      <version>4.1.6.RELEASE</version>
+    </dependency>
+
+    <dependency>
+      <groupId>com.alibaba</groupId>
+      <artifactId>fastjson</artifactId>
+      <version>1.2.9</version>
+    </dependency>
+
+  </dependencies>
+
+
+
+
+  <build>
+    <finalName>${project.artifactId}-${project.version}</finalName>
+    <!-- 控制properties里文件 变量是否可以被pom变量替代，如果没写，是不会替换的。${xxx} -->
+    <resources>
+      <resource>
+        <directory>src/main/resources</directory>
+        <filtering>true</filtering>
+      </resource>
+    </resources>
+    <testResources>
+      <testResource>
+        <directory>src/test/resources</directory>
+        <filtering>true</filtering>
+      </testResource>
+    </testResources>
+  </build>
+
+</project>
