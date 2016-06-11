@@ -4,6 +4,7 @@ import junit.framework.TestCase;
 import org.junit.Test;
 
 import java.net.InetAddress;
+import java.util.Random;
 
 /**
  * Created by zbb1990 on 2016/4/23.
@@ -23,6 +24,16 @@ public class BaseJunitTest_1 extends TestCase{
         System.out.println("0000");
     }
 
-
+    @Test
+    public void testRandom(){
+        for (int i = 0; i < 100; i++) {
+            System.out.println(Math.random());
+        }
+        System.out.println("===============================================");
+        Random random = new Random();
+        for (int i = 0; i < 100; i++) {
+            System.out.println(random.nextDouble());
+        }
+    }
 
 }
