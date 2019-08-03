@@ -37,7 +37,6 @@ public class TestThreadLocal implements Runnable{
         }).start();
 
 //        Thread.sleep(5000l);
-
         System.out.println(value.get());
         System.out.println(value);
         TestThreadLocal t = new TestThreadLocal();

@@ -31,7 +31,7 @@ public class HashCompare {
 
         int h = 0;
         if (0 != h && "aa" instanceof String) {
-            System.out.println(sun.misc.Hashing.stringHash32("aa"));
+//            System.out.println(sun.misc.Hashing.stringHash32("aa"));
         }
 
         h ^= "aa".hashCode();

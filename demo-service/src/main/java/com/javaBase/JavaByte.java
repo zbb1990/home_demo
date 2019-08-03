@@ -6,14 +6,15 @@ package com.javaBase;
  */
 public class JavaByte {
 
-    public static void main(String args[]){
+    public static void main(String args[]) throws Exception{
         int i = 'C';
         System.out.println(i);
 
+        System.out.println("学java".getBytes("UTF-8").length);
 
-
-
-
+        String hello = "hello world";
+        byte[] bytes = hello.getBytes();
+        System.out.println(bytes);
 
     }
 }

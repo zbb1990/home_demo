@@ -2,6 +2,7 @@ package com.jd.gazi;
 
 import org.junit.Test;
 import redis.clients.jedis.Jedis;
+import redis.clients.jedis.Transaction;
 import utils.RedisClient;
 import utils.RedisUtil;
 
@@ -25,7 +26,12 @@ public class RedisTest_1 {
         System.out.println("test redis set success");
 
         Jedis jedis = RedisUtil.getJedis();
-        jedis.set("zbb","ypmFromPool");
+        jedis.set("zbb", "ypmFromPool");
+
+        Transaction tx = jedis.multi();
+        tx.exec();
+
+        jedis.pipelined();
 
     }
 

@@ -1,4 +1,4 @@
-package com.net;
+package com.javaNet;
 
 /**
  * Created by zbb1990 on 2016/4/23.
