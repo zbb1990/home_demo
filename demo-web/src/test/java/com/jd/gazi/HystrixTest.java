@@ -1,6 +1,6 @@
 package com.jd.gazi;
 
-import com.xhystrix.TestHystrixJavanica;
+import com.hystrix.TestHystrixJavanica;
 import junit.framework.TestCase;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
