@@ -1,19 +1,12 @@
-package com.jd.gazi;
-
-import com.xhystrix.TestHystrixJavanica;
-import junit.framework.TestCase;
-import org.junit.Test;
-import org.springframework.beans.factory.annotation.Autowired;
+package com.xhystrix;
 
 /**
  * Created by zbb1990 on 2017/9/10.
  */
-public class HystrixTest extends TestCase {
-    @Autowired
-    private TestHystrixJavanica testHystrixJavanica;
+public class TestMain {
 
-    @Test
-    public void testHystrixJavanica(){
+    public static void main(String[] args) {
+        TestHystrixJavanica testHystrixJavanica = new TestHystrixJavanica();
         for (int i=0;i<30;i++){
             System.out.println(i + "------------------------------->>>");
             try {
@@ -22,6 +15,7 @@ public class HystrixTest extends TestCase {
             }catch (Exception x){
 
             }
+            System.out.println("hahha");
         }
     }
 }
