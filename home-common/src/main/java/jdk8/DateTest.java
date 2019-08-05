@@ -18,6 +18,10 @@ public class DateTest {
 
         LocalDateTime localDateTime = LocalDateTime.now();
         System.out.println(localDateTime);
+
+        Runnable r = () -> System.out.println("hello ");
+        r.run();
+
     }
 
 }
